@@ -3,21 +3,14 @@ import '../lib/app/public/starter.css';
 
 class Starter extends Component{
   render(){
+    var pokemon = this.props.pokemon;
+    var pokemonType = this.props.pokemonType;
+
     return(
       <div className='starterWrapper'>
         <div className='pokemon'>
-          <div className='pokemonName'>Bulbasaur</div>
-          <div className='pokemonType'>Grass</div>
-        </div>
-
-        <div className='pokemon'>
-          <div className='pokemonName'>Squirtle</div>
-          <div className='pokemonType'>Water</div>
-        </div>
-
-        <div className='pokemon'>
-          <div className='pokemonName'>Charmander</div>
-          <div className='pokemonType'>Fire</div>
+          <div className='pokemonName'>{pokemon}</div>
+          <div className='pokemonType'>{pokemonType}</div>
         </div>
       </div>
     )

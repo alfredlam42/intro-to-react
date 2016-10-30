@@ -5,9 +5,22 @@ import Starter from './Starter.jsx'
 
 
 class App extends Component{
+
   render() {
+    var pokemonList = {
+      'Bulbasaur': 'Grass',
+      'Squirtle' : 'Water',
+      'Charmander': 'Fire'
+    }
+
+    var pokemons = Object.keys(pokemonList).map(function(pokemon, i){
+      return <Starter key={i} pokemon={pokemon} pokemonType={pokemonList[pokemon]} />
+    })
+
     return(
-      <Starter />
+      <div className='appWrapper'>
+        {pokemons}
+      </div>
     )
   }
 };
