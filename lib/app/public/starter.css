@@ -1,0 +1,8 @@
+.starterWrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+.pokemon {
+  margin: 5px;
+}
