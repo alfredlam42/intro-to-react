@@ -7,7 +7,11 @@ import Starter from './Starter.jsx'
 class App extends Component{
   render() {
     return(
-      <Starter />
+      <div className='appWrapper'>
+        <Starter pokemon='Bulbasaur' pokemonType='Grass' />
+        <Starter pokemon='Squirtle' pokemonType='Water' />
+        <Starter pokemon='Charmander' pokemonType='Water' />
+      </div>
     )
   }
 };
