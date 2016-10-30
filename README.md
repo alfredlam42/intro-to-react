@@ -32,7 +32,7 @@ Start by reading the Getting Started section of my [Introduction To Node and Exp
 
 Here are more packages to install:
 ```
-npm install express react react-dom --save
+npm install react react-dom --save
 ```
 
 ```
