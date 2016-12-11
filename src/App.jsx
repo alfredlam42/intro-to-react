@@ -11,16 +11,16 @@ class App extends Component{
     this.state = {
       team: [],
     }
+    this.addToTeam = this.addToTeam.bind(this)
   }
 
-  addToTeam(pokemon, that){
-    var currentTeam = that.state.team;
+  addToTeam(pokemon){
+    var currentTeam = this.state.team;
     currentTeam.push(pokemon);
-    that.setState({team: currentTeam});
+    this.setState({team: currentTeam});
   }
 
   render() {
-    var that = this;
 
     var pokemonList = {
       'Bulbasaur': 'Grass',
@@ -29,8 +29,8 @@ class App extends Component{
     }
 
     var pokemons = Object.keys(pokemonList).map(function(pokemon, i){
-      return <Starter key={i} pokemon={pokemon} pokemonType={pokemonList[pokemon]} addToTeam={that.addToTeam} that={that}/>
-    })
+      return <Starter key={i} pokemon={pokemon} pokemonType={pokemonList[pokemon]} addToTeam={this.addToTeam} />
+    }.bind(this))
 
     return(
       <div className='appWrapper'>

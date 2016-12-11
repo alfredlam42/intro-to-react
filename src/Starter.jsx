@@ -4,11 +4,10 @@ class Starter extends Component{
   render(){
     var pokemon = this.props.pokemon;
     var pokemonType = this.props.pokemonType;
-    var that = this.props.that
 
     return(
       <div className='starterWrapper'>
-        <button className='pokemon' onClick={() => this.props.addToTeam(pokemon, that)}>
+        <button className='pokemon' onClick={() => this.props.addToTeam(pokemon)}>
           <div className='pokemonName'>{pokemon}</div>
           <div className='pokemonType'>{pokemonType}</div>
         </button>
