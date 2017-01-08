@@ -9,33 +9,20 @@ class App extends Component{
   constructor(props){
     super(props);
     this.state = {
-      team: [],
+      name: '',
     }
-    this.addToTeam = this.addToTeam.bind(this)
   }
 
-  addToTeam(pokemon){
-    var currentTeam = this.state.team;
-    currentTeam.push(pokemon);
-    this.setState({team: currentTeam});
+  changeName(event){
+    this.setState({name: event.target.value});
   }
 
   render() {
-
-    var pokemonList = {
-      'Bulbasaur': 'Grass',
-      'Squirtle' : 'Water',
-      'Charmander': 'Fire'
-    }
-
-    var pokemons = Object.keys(pokemonList).map(function(pokemon, i){
-      return <Starter key={i} pokemon={pokemon} pokemonType={pokemonList[pokemon]} addToTeam={this.addToTeam} />
-    }.bind(this))
-
     return(
       <div className='appWrapper'>
-        {pokemons}
-        <Team team={this.state.team}/>
+        My name is {this.state.name}
+        <br />
+        <input onChange={this.changeName.bind(this)} />
       </div>
     )
   }
